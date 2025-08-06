@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Installer metadata
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode / PyCharm / general IDE
+.vscode/
+.idea/
+
+# Environment & package managers
+.env
+.venv/
+*.env
+*.yml.lock
+*.conda
+*.bak
+
+# Logs & cache
+*.log
+*.tmp
+.cache/
+*.pt
+*.pth
+
+# Outputs / examples
+example/*.jpg
+example/*.jpeg
+example/*.png
+example/*.npy
+example/*.npz
+*.pdf
+
+# Docker
+*.dockerfile
+docker-compose.yml
+
+# OS files
+.DS_Store
+Thumbs.db
