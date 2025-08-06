@@ -35,10 +35,10 @@ pip install --pre torch torchvision torchaudio --index-url https://download.pyto
 ### 3. Install the SAM-TP package
 
 ```bash
-pip install git+https://github.com/StevenLiudw/SAM-TP-GENIE
+pip install git+https://github.com/jiaming-ai/GENIE-SAMTP
 
 # or git clone the code and install it with editable mode
-git clone 
+git clone https://github.com/jiaming-ai/GENIE-SAMTP
 pip install -e.
 ```
 
