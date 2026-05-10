@@ -1,0 +1,126 @@
+{
+  "mode": "rgbd",
+  "goal_x_y_m": [
+    0.0,
+    10.0
+  ],
+  "reference_observation": "cli_observation",
+  "reference_frame": "camera",
+  "projection": {
+    "resolution_m_per_px": 0.03,
+    "forward_range_m": 4.0,
+    "side_range_m": 2.0
+  },
+  "fusion": {
+    "mode": "rgbd",
+    "selected_observations": [
+      "cli_observation"
+    ],
+    "fusion_resolution_m": 0.03,
+    "reference_frame": "camera",
+    "cell_count": 1299,
+    "input_projected_points": 1299,
+    "points_inside_reference_window": 1299
+  },
+  "observations": [
+    {
+      "name": "cli_observation",
+      "image": "stretch_example/stretch_obs/rgb.png",
+      "depth": "stretch_example/stretch_obs/depth_m.npy",
+      "score_source": "samtp",
+      "rgb_bev_stats": {
+        "input_pixels": 307200.0,
+        "valid_score_pixels": 307200.0,
+        "projected_ground_points": 186805.0,
+        "bev_observed_cells": 7576.0
+      },
+      "depth_bev_stats": {
+        "input_pixels": 307200.0,
+        "valid_depth_pixels": 147909.0,
+        "bev_observed_cells": 1299.0,
+        "bev_non_traversable_cells": 315.0
+      },
+      "has_robot_pose": false
+    }
+  ],
+  "planner": {
+    "status": "ok",
+    "candidate_paths": 277,
+    "filtered_paths": 118,
+    "selected_paths": 33,
+    "start_row_col": [
+      239,
+      120
+    ],
+    "goal_row_col": [
+      0,
+      120
+    ],
+    "goal_x_y_m": [
+      0.0,
+      10.0
+    ],
+    "best_k": 12,
+    "cost_stats": {
+      "min": 117.93047785758972,
+      "max": 123.36168956756592,
+      "mean": 119.16835880279541
+    },
+    "cluster": {
+      "enabled": true,
+      "used": true,
+      "best_k": 3,
+      "goal_row_col": [
+        0,
+        120
+      ],
+      "robot_goal_angle": -90.0,
+      "best_group_idx": 2,
+      "best_group": [
+        2
+      ],
+      "best_diff_deg": 0.010507761406913119,
+      "selected_paths_after_group": 33
+    },
+    "planner": {
+      "grid_size": 240,
+      "unknown_cost": 0.2,
+      "smooth_kernel": 3,
+      "footprint_px": 18,
+      "threshold_cost": 0.5,
+      "threshold_points_ratio": 0.05,
+      "number_of_points_to_filter": 60,
+      "alpha": 1.0,
+      "path_num_samples": 100,
+      "fixed_path_bank": true,
+      "random_seed": 42
+    }
+  },
+  "output_files": {
+    "visualization": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745.png",
+    "fused_bev_png": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745_fused_bev.png",
+    "fused_bev_traversability_npy": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745_fused_bev_traversability.npy",
+    "fused_bev_observed_npy": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745_fused_bev_observed.npy",
+    "planner_cost_npy": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745_cost.npy",
+    "final_path_pixels_npy": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745_final_path_pixels.npy",
+    "final_path_xy_m_npy": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745_final_path_xy_m.npy",
+    "metadata_json": "stretch_example/stretch_obs/planner_output/genie_plan_rgbd_20260510_155745.json"
+  },
+  "semantics": {
+    "goal_coordinates": "x is +right and y is +forward, meters, in the selected reference robot/camera frame",
+    "path_xy_columns": [
+      "x_right_m",
+      "y_forward_m"
+    ],
+    "traversability": "1.0 is easiest to traverse, 0.0 is least traversable, -1.0 is unknown",
+    "visualization": {
+      "green": "low cost / traversable",
+      "red": "high cost / non-traversable",
+      "black": "unknown",
+      "gray_lines": "fixed sampled path bank",
+      "orange_lines": "paths left after filtering and optional clustering",
+      "white_line": "final selected path",
+      "cyan_dot": "goal clipped to the local BEV window if outside range"
+    }
+  }
+}

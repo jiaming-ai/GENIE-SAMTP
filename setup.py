@@ -3,9 +3,11 @@ from setuptools import setup, find_packages
 setup(
     name="sam-tp",
     version="0.1",
-    description="SAM-TP: Traversability Prediction via SAM2",
+    description="GeNIE SAM-TP traversability prediction and BEV path planning",
     author="Jiaming Wang*, Diwen Liu*, Jizhuo Chen*, Jiaxuan Da, Nuowen Qian, Tram Minh Man, Harold Soh",
-    packages=find_packages(include=["sam_tp", "sam_tp.*"]),
+    packages=find_packages(include=["sam2", "sam2.*", "genie_path_planner", "genie_path_planner.*"]),
+    include_package_data=True,
+    package_data={"sam2": ["configs/**/*.yaml"]},
     install_requires=[  # keep in sync with requirements.txt
         # "numpy>=1.24.4",
         # "tqdm>=4.66.1",
@@ -32,6 +34,13 @@ setup(
         "hydra-core>=1.3.2",
         "iopath>=0.1.10",
         "pillow>=9.4.0",
+        "PyYAML>=6.0",
+        "scikit-learn>=1.3.0",
     ],
+    entry_points={
+        "console_scripts": [
+            "genie-plan=genie_path_planner.run_image_path_planner:main",
+        ],
+    },
     python_requires=">=3.10",
 )

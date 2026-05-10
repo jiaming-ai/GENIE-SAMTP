@@ -27,8 +27,12 @@ build/
 *.log
 *.tmp
 .cache/
+temp/
+outputs/
+sam2_logs/
 *.pt
 *.pth
+stretch_example/stretch_capture.sh
 
 # Outputs / examples
 example/*.jpg

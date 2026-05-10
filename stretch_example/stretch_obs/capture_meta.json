@@ -1,0 +1,10 @@
+{
+  "robot_ip": "192.168.0.102",
+  "legacy_server_rb_swap_applied": true,
+  "rgb_raw_client_decode": "stretch_example/stretch_obs/rgb_raw_client_decode.png",
+  "rgb": "stretch_example/stretch_obs/rgb.png",
+  "depth_m": "stretch_example/stretch_obs/depth_m.npy",
+  "depth_mm": "stretch_example/stretch_obs/depth_mm.png",
+  "camera_K": "stretch_example/stretch_obs/camera_K.npy",
+  "camera_pose": "stretch_example/stretch_obs/camera_pose.npy"
+}
